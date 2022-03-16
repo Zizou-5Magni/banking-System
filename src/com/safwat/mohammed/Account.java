@@ -1,5 +1,7 @@
 package com.safwat.mohammed;
 
+import java.util.Random;
+
 public class Account {
 	//Instance variables
 	private int accountNumber;
@@ -48,9 +50,14 @@ public class Account {
 	//Method deposit
 	public void deposit(int depositAmount) {
 		accountBalance += depositAmount;
+		
 		//after deposit we must store deposit details in an object
 		//of a transaction class and store that object in collection
 		//such as linkedlist for future reference.
+		Random randomObj = new Random();	//used for transaction Number	randomOnj.nextInt(); chooses a random int.
+		Transaction transactionObj = new Transaction(randomObj.nextInt(), accountNumber, depositAmount, "Deposit", accountBalance);
+		TransactionData.addTransaction(transactionObj);	//addTransaction is static, can be used to add transaction directly like this
+		System.out.println("Transaction Stored successfully and Deposit completed... ");
 	}
 	
 	//method to withdraw from balance
@@ -66,6 +73,12 @@ public class Account {
 		//after withdraw we must store deposit details in an object
 		//of a transaction class and store that object in collection
 		//such as linkedlist for future reference.
+		
+		Random randomObj = new Random();	//used for transaction Number	randomOnj.nextInt(); chooses a random int.
+		Transaction transactionObj = new Transaction(randomObj.nextInt(), accountNumber, withdrawAmount, "Withdraw", accountBalance);
+		TransactionData.addTransaction(transactionObj);
+		System.out.println("Transaction Stored successfully and Withdraw completed... ");
+
 	}//end of method
 	
 	
