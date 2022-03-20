@@ -15,4 +15,18 @@ public class TransactionData {
 		transactionList.add(transactionObj);
 		
 	}
+	//Method to display statement using account number.
+	public static void displayStatement(int acctNumber) {
+		System.out.println("Statement for account number: " + acctNumber);
+		System.out.println();
+		
+		//loop through list: when matched, display all details
+		for(Transaction t: transactionList) {
+			if(t.getAccountNumber() == acctNumber) {
+				System.out.println("Account Number: "+ t.getTransactionNumber() + "\n" + "Transaction Type: "+ t.getTransactionType() + "\n" + "Amount: " + t.getTransactionAmount() + "\n" + "Remaining Balance: " + t.getBalanceAfterTransaction());
+			}
+		}
+		
+		
+	}
 }
