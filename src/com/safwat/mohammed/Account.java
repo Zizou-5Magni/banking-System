@@ -56,8 +56,10 @@ public class Account {
 		//such as linkedlist for future reference.
 		Random randomObj = new Random();	//used for transaction Number	randomOnj.nextInt(); chooses a random int.
 		Transaction transactionObj = new Transaction(randomObj.nextInt(), accountNumber, depositAmount, "Deposit", accountBalance);
+		
+		//Why TransactionData was used?? ask someone
 		TransactionData.addTransaction(transactionObj);	//addTransaction is static, can be used to add transaction directly like this
-		System.out.println("Transaction Stored successfully and Deposit completed... ");
+		System.out.println("Deposit successful and Transaction saved.");
 	}
 	
 	//method to withdraw from balance
@@ -77,7 +79,7 @@ public class Account {
 		Random randomObj = new Random();	//used for transaction Number	randomOnj.nextInt(); chooses a random int.
 		Transaction transactionObj = new Transaction(randomObj.nextInt(), accountNumber, withdrawAmount, "Withdraw", accountBalance);
 		TransactionData.addTransaction(transactionObj);
-		System.out.println("Transaction Stored successfully and Withdraw completed... ");
+		System.out.println("Withdraw successful and Transaction saved.");
 
 	}//end of method
 	

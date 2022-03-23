@@ -23,7 +23,9 @@ public class TransactionData {
 		//loop through list: when matched, display all details
 		for(Transaction t: transactionList) {
 			if(t.getAccountNumber() == acctNumber) {
-				System.out.println("Account Number: "+ t.getTransactionNumber() + "\n" + "Transaction Type: "+ t.getTransactionType() + "\n" + "Amount: " + t.getTransactionAmount() + "\n" + "Remaining Balance: " + t.getBalanceAfterTransaction());
+				System.out.println("Transaction Number: "+ t.getTransactionNumber() + "\n" +
+									"Transaction Type: "+ t.getTransactionType() + "\n" + 
+									"Amount: " + t.getTransactionAmount() + "\n" + "Remaining Balance: " + t.getBalanceAfterTransaction() + "\n");
 			}
 		}
 		
